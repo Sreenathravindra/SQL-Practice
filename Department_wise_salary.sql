@@ -12,7 +12,7 @@ from
 (select employee_name,
 		salary, 
         department_id,
-        row_number() over(partition by department_id order by salary) as rn 
+        row_number() over(partition by department_id order by salary desc) as rn 
 from employees) tbl
 
 where rn = 1;
